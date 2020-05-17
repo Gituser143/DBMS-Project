@@ -4,4 +4,4 @@ DBMS-Project
 ER-Diagram
 ----------
 
-![Er-Diagram](Vehicle-Insurance-DBMS.png)
+![Er-Diagram](Insurance-ER-Diagram.png)
