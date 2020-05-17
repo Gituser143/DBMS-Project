@@ -47,7 +47,7 @@ CREATE TABLE Registration (
   vehicle_number varchar(10),
   vehicle_type varchar(20),
   date_of_registration date NOT NULL,
-  PRIMARY KEY (registration_id),
+  PRIMARY KEY (registration_id, vehicle_number),
   FOREIGN KEY(vehicle_number) REFERENCES Vehicle(vehicle_number)
 );
 
@@ -59,8 +59,7 @@ CREATE TABLE Insurance (
   insurance_type varchar(20) NOT NULL,
   insurance_validity date NOT NULL,
   PRIMARY KEY (insurance_id),
-  FOREIGN KEY(registration_id) REFERENCES Registration(registration_id),
-  FOREIGN KEY(vehicle_number) REFERENCES Vehicle(vehicle_number),
+  FOREIGN KEY(registration_id, vehicle_number) REFERENCES Registration(registration_id, vehicle_number),
   FOREIGN KEY(owner_id) REFERENCES Customer(customer_id)
   -- CONSTRAINT vehicle_number CHECK ( Insurance.vehicle_number = Registration.vehicle_number AND Insurance.registration_id = Registration.registration_id)
 
