@@ -1,7 +1,7 @@
 CREATE TABLE Users (
   user_id integer,
   email_id varchar(100) NOT NULL UNIQUE,
-  mobile_number varchar(10) NOT NULL UNIQUE,
+  mobile_number varchar(10) NOT NULL UNIQUE, -- check should be of correct length
   address varchar(200) NOT NULL,
   name varchar(100) NOT NULL,
   PRIMARY KEY (user_id)
@@ -9,7 +9,7 @@ CREATE TABLE Users (
 
 CREATE TABLE Login_Credentials (
   username integer NOT NULL,
-  password varchar(100) NOT NULL,
+  password varchar(100) NOT NULL, -- check length, min should be 8
   security_question varchar(100),
   FOREIGN KEY(username) REFERENCES Users(user_id)
 );
@@ -34,7 +34,7 @@ CREATE TABLE Customer (
 
 CREATE TABLE Vehicle (
   vehicle_id integer,
-  vehicle_number varchar(10) UNIQUE,
+  vehicle_number varchar(10) UNIQUE,  -- check with regex
   type varchar(20) NOT NULL,
   description varchar(100),
   owner_id integer,
