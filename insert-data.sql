@@ -6,9 +6,9 @@ INSERT INTO Users VALUES (0005, 'user5@gmail.com', '9966776655', '#5, Bank stree
 
 INSERT INTO Roles VALUES (0001, 'Agent', 'Simple user Agent');
 INSERT INTO Roles VALUES (0002, 'Agent', 'Simple user Agent');
-INSERT INTO Roles VALUES (0003, 'Manager', 'Manages agents');
-INSERT INTO Roles VALUES (0004, 'Manager', 'Manages agents');
-INSERT INTO Roles VALUES (0005, 'CEO', 'Leads Managers');
+INSERT INTO Roles VALUES (0003, 'Manager', 'Manages agents in group 1');
+INSERT INTO Roles VALUES (0004, 'Manager', 'Manages agents in group 2');
+INSERT INTO Roles VALUES (0005, 'CEO', 'Runs the company');
 
 INSERT INTO Login_Credentials VALUES (0001, 'pass1', 'what is your mothers name?');
 INSERT INTO Login_Credentials VALUES (0002, 'pass2', 'what is your fathers name?');
