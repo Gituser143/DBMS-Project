@@ -7,24 +7,11 @@ CREATE TABLE Users (
   role_name varchar(100),
   role_description varchar(100),
   office_building varchar(100),
-  -- office_room varchar(10),
-  PRIMARY KEY (user_id)
-);
-
-CREATE TABLE Login_Credentials (
-  user_id integer,
-  username varchar(20) NOT NULL,
+  username varchar(20),
   password varchar(100) NOT NULL, -- check length, min should be 8
   security_question varchar(100),
-  FOREIGN KEY(user_id) REFERENCES Users(user_id)
+  PRIMARY KEY (user_id)
 );
-
--- CREATE TABLE Roles (
---   user_id integer,
---   role_name varchar(100),
---   description varchar(100),
---   FOREIGN KEY(user_id) REFERENCES Users(user_id)
--- );
 
 CREATE TABLE Customer (
   customer_id integer,
@@ -66,24 +53,4 @@ CREATE TABLE Insurance (
   PRIMARY KEY (insurance_id),
   FOREIGN KEY(registration_id, vehicle_number) REFERENCES Registration(registration_id, vehicle_number),
   FOREIGN KEY(owner_id) REFERENCES Customer(customer_id)
-  -- CONSTRAINT vehicle_number CHECK ( Insurance.vehicle_number = Registration.vehicle_number AND Insurance.registration_id = Registration.registration_id)
-
 );
---
--- CREATE FUNCTION validate_pairs()
--- RETURNS TRIGGER AS $example$
---   DECLARE
---     v_number varchar(10);
---     reg_id integer;
---   BEGIN
---     SELECT vehicle_number INTO v_number FROM Registration WHERE registration_id = id;
---     UPDATE Insurance
---     SET vehicle_number = v_number
---     WHERE registration_id = id;
---     RETURN id;
---   END; $example$
--- LANGUAGE plpgsql;
---
--- CREATE TRIGGER pair_check AFTER INSERT ON Insurance
--- FOR EACH ROW
--- EXECUTE PROCEDURE validate_pairs();

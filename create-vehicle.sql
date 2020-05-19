@@ -1,24 +1,28 @@
+CREATE TABLE Login_Credentials (
+  username varchar(100),
+  password varchar(100) NOT NULL, -- check length, min should be 8
+  security_question varchar(100),
+  PRIMARY KEY (username)
+);
+
+CREATE TABLE Roles (
+  role_name varchar(100),
+  role_description varchar(100),
+  office_building varchar(100),
+  PRIMARY KEY (role_name)
+);
+
 CREATE TABLE Users (
   user_id integer,
+  username varchar(100),
   email_id varchar(100) NOT NULL UNIQUE,
   mobile_number varchar(10) NOT NULL UNIQUE, -- check should be of correct length
   address varchar(200) NOT NULL,
   name varchar(100) NOT NULL,
-  PRIMARY KEY (user_id)
-);
-
-CREATE TABLE Login_Credentials (
-  username integer NOT NULL,
-  password varchar(100) NOT NULL, -- check length, min should be 8
-  security_question varchar(100),
-  FOREIGN KEY(username) REFERENCES Users(user_id)
-);
-
-CREATE TABLE Roles (
-  user_id integer,
   role_name varchar(100),
-  description varchar(100),
-  FOREIGN KEY(user_id) REFERENCES Users(user_id)
+  PRIMARY KEY (user_id),
+  FOREIGN KEY (role_name) REFERENCES Roles (role_name),
+  FOREIGN KEY (username) REFERENCES Login_Credentials (username)
 );
 
 CREATE TABLE Customer (
@@ -61,24 +65,4 @@ CREATE TABLE Insurance (
   PRIMARY KEY (insurance_id),
   FOREIGN KEY(registration_id, vehicle_number) REFERENCES Registration(registration_id, vehicle_number),
   FOREIGN KEY(owner_id) REFERENCES Customer(customer_id)
-  -- CONSTRAINT vehicle_number CHECK ( Insurance.vehicle_number = Registration.vehicle_number AND Insurance.registration_id = Registration.registration_id)
-
 );
---
--- CREATE FUNCTION validate_pairs()
--- RETURNS TRIGGER AS $example$
---   DECLARE
---     v_number varchar(10);
---     reg_id integer;
---   BEGIN
---     SELECT vehicle_number INTO v_number FROM Registration WHERE registration_id = id;
---     UPDATE Insurance
---     SET vehicle_number = v_number
---     WHERE registration_id = id;
---     RETURN id;
---   END; $example$
--- LANGUAGE plpgsql;
---
--- CREATE TRIGGER pair_check AFTER INSERT ON Insurance
--- FOR EACH ROW
--- EXECUTE PROCEDURE validate_pairs();
