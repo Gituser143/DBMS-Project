@@ -1,20 +1,21 @@
-INSERT INTO Users VALUES (0001, 'user1@gmail.com', '9988776655', '#1, Bank street, Bangalore', 'user1');
-INSERT INTO Users VALUES (0002, 'user2@gmail.com', '9922776655', '#2, Church street, Bangalore', 'user2');
-INSERT INTO Users VALUES (0003, 'user3@gmail.com', '9933776655', '#3, Food street, Bangalore', 'user3');
-INSERT INTO Users VALUES (0004, 'user4@gmail.com', '9944776655', '#4, Bank Lane, Bangalore', 'user4');
-INSERT INTO Users VALUES (0005, 'user5@gmail.com', '9966776655', '#5, Bank street, Bangalore', 'user5');
+INSERT INTO Login_Credentials VALUES ('user1', 'pass1', 'what is your mothers name?');
+INSERT INTO Login_Credentials VALUES ('user2', 'pass2', 'what is your fathers name?');
+INSERT INTO Login_Credentials VALUES ('user3', 'pass3', 'what is your sisters name?');
+INSERT INTO Login_Credentials VALUES ('user4', 'pass4', 'what is your dogs name?');
+INSERT INTO Login_Credentials VALUES ('user5', 'pass5', 'what is your mothers DOB?');
 
-INSERT INTO Roles VALUES (0001, 'Agent', 'Simple user Agent');
-INSERT INTO Roles VALUES (0002, 'Agent', 'Simple user Agent');
-INSERT INTO Roles VALUES (0003, 'Manager', 'Manages agents in group 1');
-INSERT INTO Roles VALUES (0004, 'Manager', 'Manages agents in group 2');
-INSERT INTO Roles VALUES (0005, 'CEO', 'Runs the company');
+INSERT INTO Roles VALUES ('Agent', 'Simple user Agent', 'B01');
+INSERT INTO Roles VALUES ('Manager', 'Manages Agents', 'B02');
+INSERT INTO Roles VALUES ('Assistant Manager', 'Helps Managers', 'B02');
+INSERT INTO Roles VALUES ('System Administrator', 'Handles Servers', 'B04');
+INSERT INTO Roles VALUES ('CEO', 'Runs the company', 'B03');
 
-INSERT INTO Login_Credentials VALUES (0001, 'pass1', 'what is your mothers name?');
-INSERT INTO Login_Credentials VALUES (0002, 'pass2', 'what is your fathers name?');
-INSERT INTO Login_Credentials VALUES (0003, 'pass3', 'what is your sisters name?');
-INSERT INTO Login_Credentials VALUES (0004, 'pass4', 'what is your dogs name?');
-INSERT INTO Login_Credentials VALUES (0005, 'pass5', 'what is your mothers DOB?');
+INSERT INTO Users VALUES (0001, 'user1', 'user1@gmail.com', '9988776655', '#1, Bank street, Bangalore', 'agent1', 'Agent');
+INSERT INTO Users VALUES (0002, 'user1', 'user2@gmail.com', '9922776655', '#2, Church street, Bangalore', 'agent2', 'Manager');
+INSERT INTO Users VALUES (0003, 'user1', 'user3@gmail.com', '9933776655', '#3, Food street, Bangalore', 'agent3', 'Assistant Manager');
+INSERT INTO Users VALUES (0004, 'user1', 'user4@gmail.com', '9944776655', '#4, Bank Lane, Bangalore', 'agent4', 'System Administrator');
+INSERT INTO Users VALUES (0005, 'user1', 'user5@gmail.com', '9966776655', '#5, Bank street, Bangalore', 'agent5', 'CEO');
+
 
 INSERT INTO Customer VALUES (00101, 0001, 'customer1', '8899776655', 'customer1@gmail.com', '#7, UB City, Bangalore');
 INSERT INTO Customer VALUES (00102, 0001, 'customer2', '8899776644', 'customer2@gmail.com', '#8, UB City, Bangalore');
@@ -22,11 +23,11 @@ INSERT INTO Customer VALUES (00103, 0002, 'customer3', '8899776633', 'customer3@
 INSERT INTO Customer VALUES (00104, 0002, 'customer4', '8899776622', 'customer4@gmail.com', '#10, UB City, Bangalore');
 INSERT INTO Customer VALUES (00105, 0001, 'customer5', '8899776611', 'customer5@gmail.com', '#12, UB City, Bangalore');
 
-INSERT INTO Vehicle VALUES (00201, 'KA05MC1234', 'SUV', 'Blue SUV', 00101);
-INSERT INTO Vehicle VALUES (00202, 'KA05MC1235', 'Sedan', 'Grey Sedan', 00102);
-INSERT INTO Vehicle VALUES (00203, 'KA05MC2234', 'Hatch', 'White hatchback', 00103);
-INSERT INTO Vehicle VALUES (00204, 'KA05MC1134', 'Truck', 'Red truck', 00104);
-INSERT INTO Vehicle VALUES (00205, 'KA05MC1255', 'Van', 'School Van', 00105);
+INSERT INTO Vehicle VALUES (00201, 'KA05MC1234', 'SUV', 'Blue Honda SUV', 00101);
+INSERT INTO Vehicle VALUES (00202, 'KA05MC1235', 'Sedan', 'Grey Mercedees Sedan', 00102);
+INSERT INTO Vehicle VALUES (00203, 'KA05MC2234', 'Hatch', 'White Kia hatchback', 00103);
+INSERT INTO Vehicle VALUES (00204, 'KA05MC1134', 'Truck', 'Red freight truck', 00104);
+INSERT INTO Vehicle VALUES (00205, 'KA05MC1255', 'Van', 'Maruti School Van', 00105);
 
 INSERT INTO Registration VALUES (00201, 'KA05MC1234', 'SUV', '2020-01-08');
 INSERT INTO Registration VALUES (00202, 'KA05MC1235', 'Sedan', '2020-01-08');
