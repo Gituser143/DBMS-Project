@@ -7,15 +7,16 @@ CREATE TABLE Users (
   role_name varchar(100),
   role_description varchar(100),
   office_building varchar(100),
-  office_floor integer,
+  -- office_room varchar(10),
   PRIMARY KEY (user_id)
 );
 
 CREATE TABLE Login_Credentials (
-  username integer NOT NULL,
+  user_id integer,
+  username varchar(20) NOT NULL,
   password varchar(100) NOT NULL, -- check length, min should be 8
   security_question varchar(100),
-  FOREIGN KEY(username) REFERENCES Users(user_id)
+  FOREIGN KEY(user_id) REFERENCES Users(user_id)
 );
 
 -- CREATE TABLE Roles (
