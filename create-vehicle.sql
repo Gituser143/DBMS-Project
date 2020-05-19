@@ -1,6 +1,6 @@
 CREATE TABLE Login_Credentials (
   username varchar(100),
-  password varchar(100) NOT NULL, -- check length, min should be 8
+  password varchar(100) NOT NULL CHECK (char_length(password) > 7 AND char_length(password) <= 100),
   security_question varchar(100),
   PRIMARY KEY (username)
 );
@@ -16,7 +16,7 @@ CREATE TABLE Users (
   user_id integer,
   username varchar(100),
   email_id varchar(100) NOT NULL UNIQUE,
-  mobile_number varchar(10) NOT NULL UNIQUE, -- check should be of correct length
+  mobile_number varchar(10) NOT NULL UNIQUE CHECK (char_length(mobile_number) = 10),
   address varchar(200) NOT NULL,
   name varchar(100) NOT NULL,
   role_name varchar(100),
@@ -29,7 +29,7 @@ CREATE TABLE Customer (
   customer_id integer,
   agent_id integer,
   name varchar(100) NOT NULL,
-  mobile_number varchar(10) NOT NULL UNIQUE,
+  mobile_number varchar(10) NOT NULL UNIQUE CHECK (char_length(mobile_number) = 10),
   email varchar(100) NOT NULL UNIQUE,
   address varchar(200) NOT NULL,
   PRIMARY KEY (customer_id),
@@ -38,7 +38,7 @@ CREATE TABLE Customer (
 
 CREATE TABLE Vehicle (
   vehicle_id integer,
-  vehicle_number varchar(10) UNIQUE,  -- check with regex
+  vehicle_number varchar(15) UNIQUE CHECK ( vehicle_number ~ $$^[A-Z]{2}\s[0-9]{2}\s[A-Z]{2}\s[0-9]{4}$$),  -- check with regex
   type varchar(20) NOT NULL,
   description varchar(100),
   owner_id integer,
@@ -48,7 +48,7 @@ CREATE TABLE Vehicle (
 
 CREATE TABLE Registration (
   registration_id integer UNIQUE,
-  vehicle_number varchar(10),
+  vehicle_number varchar(15),
   vehicle_type varchar(20),
   date_of_registration date NOT NULL,
   PRIMARY KEY (registration_id, vehicle_number),
@@ -58,7 +58,7 @@ CREATE TABLE Registration (
 CREATE TABLE Insurance (
   insurance_id integer,
   registration_id integer,
-  vehicle_number varchar(10),
+  vehicle_number varchar(15),
   owner_id integer,
   insurance_type varchar(20) NOT NULL,
   insurance_validity date NOT NULL,
