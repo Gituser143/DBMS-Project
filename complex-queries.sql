@@ -47,6 +47,7 @@
 --   )
 -- );
 
--- SELECT name, vehicle_number, registration_id, insurance_id FROM customer C INNER JOIN insurance I on C.customer_id = I.owner_id;
+-- Correlated Queries
+---------------------
 
-SELECT V.vehicle_id, V.vehicle_number FROM Vehicle V WHERE V.vehicle_number = (SELECT I.vehicle_number FROM Insurance I WHERE V.owner_id = I.owner_id); 
+SELECT insurance_type, insurance_amount, insurance_validity, vehicle_number FROM insurance WHERE registration_id = (SELECT registration_id FROM Registration WHERE vehicle_type = 'Bike');
