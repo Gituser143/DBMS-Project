@@ -21,8 +21,8 @@ CREATE TABLE Users (
   name varchar(100) NOT NULL,
   role_name varchar(100),
   PRIMARY KEY (user_id),
-  FOREIGN KEY (role_name) REFERENCES Roles (role_name),
-  FOREIGN KEY (username) REFERENCES Login_Credentials (username)
+  FOREIGN KEY (role_name) REFERENCES Roles (role_name) ON DELETE SET NULL ON UPDATE CASCADE,
+  FOREIGN KEY (username) REFERENCES Login_Credentials (username) ON DELETE SET NULL ON UPDATE CASCADE
 );
 
 CREATE TABLE Customer (
@@ -33,7 +33,7 @@ CREATE TABLE Customer (
   email varchar(100) NOT NULL UNIQUE,
   address varchar(200) NOT NULL,
   PRIMARY KEY (customer_id),
-  FOREIGN KEY(agent_id) REFERENCES Users(user_id)
+  FOREIGN KEY(agent_id) REFERENCES Users(user_id) ON DELETE SET NULL ON UPDATE CASCADE
 );
 
 CREATE TABLE Vehicle (
@@ -43,7 +43,7 @@ CREATE TABLE Vehicle (
   description varchar(100),
   owner_id integer,
   PRIMARY KEY (vehicle_id),
-  FOREIGN KEY(owner_id) REFERENCES Customer(customer_id)
+  FOREIGN KEY(owner_id) REFERENCES Customer(customer_id) ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
 CREATE TABLE Registration (
@@ -52,7 +52,7 @@ CREATE TABLE Registration (
   vehicle_type varchar(20),
   date_of_registration date NOT NULL,
   PRIMARY KEY (registration_id, vehicle_number),
-  FOREIGN KEY(vehicle_number) REFERENCES Vehicle(vehicle_number)
+  FOREIGN KEY(vehicle_number) REFERENCES Vehicle(vehicle_number) ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
 CREATE TABLE Insurance (
@@ -63,6 +63,6 @@ CREATE TABLE Insurance (
   insurance_type varchar(20) NOT NULL,
   insurance_validity date NOT NULL,
   PRIMARY KEY (insurance_id),
-  FOREIGN KEY(registration_id, vehicle_number) REFERENCES Registration(registration_id, vehicle_number),
-  FOREIGN KEY(owner_id) REFERENCES Customer(customer_id)
+  FOREIGN KEY(registration_id, vehicle_number) REFERENCES Registration(registration_id, vehicle_number) ON DELETE SET NULL ON UPDATE CASCADE,
+  FOREIGN KEY(owner_id) REFERENCES Customer(customer_id) ON DELETE SET NULL ON UPDATE CASCADE
 );
