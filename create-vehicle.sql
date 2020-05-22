@@ -63,6 +63,7 @@ CREATE TABLE Insurance (
   owner_id integer,
   insurance_type varchar(20) NOT NULL,
   insurance_validity date NOT NULL,
+  insurance_amount integer NOT NULL,
   PRIMARY KEY (insurance_id),
   FOREIGN KEY(registration_id, vehicle_number) REFERENCES Registration(registration_id, vehicle_number) ON DELETE SET NULL ON UPDATE CASCADE,
   FOREIGN KEY(owner_id) REFERENCES Customer(customer_id) ON DELETE SET NULL ON UPDATE CASCADE
