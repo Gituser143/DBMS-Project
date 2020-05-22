@@ -9,6 +9,7 @@ CREATE TABLE Roles (
   role_name varchar(100),
   role_description varchar(100),
   office_building varchar(100),
+  salary integer,
   PRIMARY KEY (role_name)
 );
 

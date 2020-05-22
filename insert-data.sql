@@ -4,11 +4,11 @@ INSERT INTO Login_Credentials VALUES ('user3', 'password3', 'what is your sister
 INSERT INTO Login_Credentials VALUES ('user4', 'password4', 'what is your dogs name?');
 INSERT INTO Login_Credentials VALUES ('user5', 'password5', 'what is your mothers DOB?');
 
-INSERT INTO Roles VALUES ('Agent', 'Simple user Agent', 'B01');
-INSERT INTO Roles VALUES ('Manager', 'Manages Agents', 'B02');
-INSERT INTO Roles VALUES ('Assistant Manager', 'Helps Managers', 'B02');
-INSERT INTO Roles VALUES ('System Administrator', 'Handles Servers', 'B04');
-INSERT INTO Roles VALUES ('CEO', 'Runs the company', 'B03');
+INSERT INTO Roles VALUES ('Agent', 'Simple user Agent', 'B01', 50000);
+INSERT INTO Roles VALUES ('Manager', 'Manages Agents', 'B02', 75000);
+INSERT INTO Roles VALUES ('Assistant Manager', 'Helps Managers', 'B02', 60000);
+INSERT INTO Roles VALUES ('System Administrator', 'Handles Servers', 'B04', 500000);
+INSERT INTO Roles VALUES ('CEO', 'Runs the company', 'B03', 2500000);
 
 INSERT INTO Users VALUES (0001, 'user1', 'user1@gmail.com', '9988776655', '#1, Bank street, Bangalore', 'agent1', 'Agent');
 INSERT INTO Users VALUES (0002, 'user2', 'user2@gmail.com', '9922776655', '#2, Church street, Bangalore', 'agent2', 'Manager');
