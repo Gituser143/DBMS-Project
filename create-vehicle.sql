@@ -41,7 +41,7 @@ CREATE TABLE Vehicle (
   vehicle_id integer,
   vehicle_number varchar(15) UNIQUE CHECK ( vehicle_number ~ $$^[A-Z]{2}\s[0-9]{2}\s[A-Z]{2}\s[0-9]{4}$$),  -- check with regex
   type varchar(20) NOT NULL,
-  description varchar(100),
+  make_model varchar(100),
   owner_id integer,
   PRIMARY KEY (vehicle_id),
   FOREIGN KEY(owner_id) REFERENCES Customer(customer_id) ON DELETE RESTRICT ON UPDATE CASCADE

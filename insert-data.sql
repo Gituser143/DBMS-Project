@@ -33,18 +33,18 @@ INSERT INTO Vehicle VALUES (00201, 'KA 05 MC 1234', 'SUV', 'Blue Honda SUV', 001
 INSERT INTO Vehicle VALUES (00202, 'KA 05 MC 1235', 'Sedan', 'Grey Mercedees Sedan', 00102);
 INSERT INTO Vehicle VALUES (00203, 'KA 05 MC 2234', 'Hatch', 'White Kia hatchback', 00103);
 INSERT INTO Vehicle VALUES (00204, 'KA 05 MC 1134', 'Truck', 'Red freight truck', 00104);
-INSERT INTO Vehicle VALUES (00205, 'KA 05 MC 1255', 'Van', 'Maruti School Van', 00105);
-INSERT INTO Vehicle VALUES (00206, 'KA 05 MK 1295', 'Bike', 'Blue Bike', 00105);
-INSERT INTO Vehicle VALUES (00207, 'KA 05 MK 1355', 'Scooter', 'Yellow scooter', 00105);
+INSERT INTO Vehicle VALUES (00205, 'KA 05 MC 1255', 'Van', 'Green Maruti School Van', 00105);
+INSERT INTO Vehicle VALUES (00206, 'KA 05 MK 1295', 'Bike', 'Blue Bajaj Bike', 00105);
+INSERT INTO Vehicle VALUES (00207, 'KA 05 MK 1355', 'Scooter', 'Yellow Vespa Scooter', 00105);
 
 
-INSERT INTO Registration VALUES (00201, 'KA 05 MC 1234', 'SUV', '2002-01-08');
-INSERT INTO Registration VALUES (00202, 'KA 05 MC 1235', 'Sedan', '2019-01-08');
-INSERT INTO Registration VALUES (00203, 'KA 05 MC 2234', 'Hatch', '2014-01-08');
-INSERT INTO Registration VALUES (00204, 'KA 05 MC 1134', 'Truck', '2001-01-08');
-INSERT INTO Registration VALUES (00205, 'KA 05 MC 1255', 'Van', '2003-01-08');
-INSERT INTO Registration VALUES (00206, 'KA 05 MK 1295', 'Bike', '2010-01-08');
-INSERT INTO Registration VALUES (00207, 'KA 05 MK 1355', 'Scooter', '2008-01-08');
+INSERT INTO Registration VALUES (00201, 'KA 05 MC 1234', 'LMV', '2002-01-08');
+INSERT INTO Registration VALUES (00202, 'KA 05 MC 1235', 'LMV', '2019-01-08');
+INSERT INTO Registration VALUES (00203, 'KA 05 MC 2234', 'LMV', '2014-01-08');
+INSERT INTO Registration VALUES (00204, 'KA 05 MC 1134', 'HMV', '2001-01-08');
+INSERT INTO Registration VALUES (00205, 'KA 05 MC 1255', 'LMV', '2003-01-08');
+INSERT INTO Registration VALUES (00206, 'KA 05 MK 1295', 'MCWG', '2010-01-08');
+INSERT INTO Registration VALUES (00207, 'KA 05 MK 1355', 'MCWOG', '2008-01-08');
 
 
 INSERT INTO Insurance VALUES (00301, 00201, 'KA 05 MC 1234', 00101, 'Basic', '2022-01-08', 40000);
