@@ -53,3 +53,9 @@ WHERE user_id in (
 SELECT I.vehicle_number, I.insurance_amount, I.insurance_validity, I.insurance_type FROM insurance I WHERE I.registration_id = (SELECT R.registration_id FROM Registration R WHERE R.vehicle_type = 'MCWOG');
 
 UPDATE Vehicle V SET type = (SELECT R.vehicle_type FROM Registration R WHERE V.vehicle_number = R.vehicle_number);
+
+-- Outer JOIN
+-------------
+SELECT * FROM Users FULL OUTER JOIN Roles on Users.role_name = Roles.role_name;
+
+SELECT * FROM Users FULL OUTER JOIN Insurance on Users.user_id = Insurance.owner_id;
