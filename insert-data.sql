@@ -38,20 +38,20 @@ INSERT INTO Vehicle VALUES (00206, 'KA 05 MK 1295', 'Bike', 'Blue Bajaj Bike', 0
 INSERT INTO Vehicle VALUES (00207, 'KA 05 MK 1355', 'Scooter', 'Yellow Vespa Scooter', 00105);
 
 
-INSERT INTO Registration VALUES (00201, 'KA 05 MC 1234', 'LMV', '2002-01-08');
-INSERT INTO Registration VALUES (00202, 'KA 05 MC 1235', 'LMV', '2019-01-08');
-INSERT INTO Registration VALUES (00203, 'KA 05 MC 2234', 'LMV', '2014-01-08');
-INSERT INTO Registration VALUES (00204, 'KA 05 MC 1134', 'HMV', '2001-01-08');
-INSERT INTO Registration VALUES (00205, 'KA 05 MC 1255', 'LMV', '2003-01-08');
-INSERT INTO Registration VALUES (00206, 'KA 05 MK 1295', 'MCWG', '2010-01-08');
-INSERT INTO Registration VALUES (00207, 'KA 05 MK 1355', 'MCWOG', '2008-01-08');
+-- INSERT INTO Registration(vehicle_number, vehicle_type, date_of_registration) VALUES ('KA 05 MC 1234', 'LMV', '2002-01-08');
+-- INSERT INTO Registration(vehicle_number, vehicle_type, date_of_registration) VALUES ('KA 05 MC 1235', 'LMV', '2019-01-08');
+-- INSERT INTO Registration(vehicle_number, vehicle_type, date_of_registration) VALUES ('KA 05 MC 2234', 'LMV', '2014-01-08');
+-- INSERT INTO Registration(vehicle_number, vehicle_type, date_of_registration) VALUES ('KA 05 MC 1134', 'HMV', '2001-01-08');
+-- INSERT INTO Registration(vehicle_number, vehicle_type, date_of_registration) VALUES ('KA 05 MC 1255', 'LMV', '2003-01-08');
+-- INSERT INTO Registration(vehicle_number, vehicle_type, date_of_registration) VALUES ('KA 05 MK 1295', 'MCWG', '2010-01-08');
+-- INSERT INTO Registration(vehicle_number, vehicle_type, date_of_registration) VALUES ('KA 05 MK 1355', 'MCWOG', '2008-01-08');
 
 
-INSERT INTO Insurance VALUES (00301, 00201, 'KA 05 MC 1234', 00101, 'Basic', '2022-01-08', 40000);
-INSERT INTO Insurance VALUES (00302, 00202, 'KA 05 MC 1235', 00102, 'Premium', '2023-01-08', 50000);
-INSERT INTO Insurance VALUES (00303, 00203, 'KA 05 MC 2234', 00103, 'Premium', '2023-01-08', 50000);
-INSERT INTO Insurance VALUES (00304, 00204, 'KA 05 MC 1134', 00104, 'Gold-Package', '2024-01-08', 60000);
--- INSERT INTO Insurance VALUES (00305, 00205, 'KA 05 MC 1255', 00105, 'Basic', '2022-01-08', 40000);
-INSERT INTO Insurance VALUES (00305, 00205, 'KA 05 MC 1255', 00105, 'Gold-Package', '2024-01-08', 70000);
-INSERT INTO Insurance VALUES (00306, 00206, 'KA 05 MK 1295', 00105, 'Gold-Package', '2019-01-08', 28000);
-INSERT INTO Insurance VALUES (00307, 00207, 'KA 05 MK 1355', 00105, 'Premium', '2018-01-08', 27000);
+INSERT INTO Insurance VALUES (00301, 1, 'KA 05 MC 1234', 00101, 'Basic', '2022-01-08', 40000);
+INSERT INTO Insurance VALUES (00302, 2, 'KA 05 MC 1235', 00102, 'Premium', '2023-01-08', 50000);
+INSERT INTO Insurance VALUES (00303, 3, 'KA 05 MC 2234', 00103, 'Premium', '2023-01-08', 50000);
+INSERT INTO Insurance VALUES (00304, 4, 'KA 05 MC 1134', 00104, 'Gold-Package', '2024-01-08', 60000);
+-- INSERT INTO Insurance VALUES (00305, 5, 'KA 05 MC 1255', 00105, 'Basic', '2022-01-08', 40000);
+INSERT INTO Insurance VALUES (00305, 5, 'KA 05 MC 1255', 00105, 'Gold-Package', '2024-01-08', 70000);
+INSERT INTO Insurance VALUES (00306, 6, 'KA 05 MK 1295', 00105, 'Gold-Package', '2019-01-08', 28000);
+INSERT INTO Insurance VALUES (00307, 7, 'KA 05 MK 1355', 00105, 'Premium', '2018-01-08', 27000);

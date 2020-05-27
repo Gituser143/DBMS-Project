@@ -48,7 +48,7 @@ CREATE TABLE Vehicle (
 );
 
 CREATE TABLE Registration (
-  registration_id integer UNIQUE,
+  registration_id SERIAL,
   vehicle_number varchar(15),
   vehicle_type varchar(20),
   date_of_registration date NOT NULL,
@@ -110,3 +110,15 @@ $table$ LANGUAGE plpgsql;
 CREATE TRIGGER audit_insurance_trigger
 AFTER INSERT OR UPDATE OR DELETE ON Insurance
 FOR EACH ROW EXECUTE PROCEDURE auditloginsurance();
+
+CREATE OR REPLACE FUNCTION create_registration() RETURNS TRIGGER AS $table$
+  BEGIN
+    INSERT INTO Registration(vehicle_number, vehicle_type, date_of_registration)
+    VALUES (new.vehicle_number, new.type, NOW());
+    RETURN NEW;
+  END;
+$table$ LANGUAGE plpgsql;
+
+CREATE TRIGGER create_registration_trigger
+AFTER INSERT ON Vehicle
+FOR EACH ROW EXECUTE PROCEDURE create_registration();
