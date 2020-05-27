@@ -50,8 +50,10 @@ WHERE user_id in (
 -- Correlated Queries
 ---------------------
 
+-- Find insurance details for all geared motor cycles
 SELECT I.vehicle_number, I.insurance_amount, I.insurance_validity, I.insurance_type FROM insurance I WHERE I.registration_id = (SELECT R.registration_id FROM Registration R WHERE R.vehicle_type = 'MCWOG');
 
+-- Update vehicle types based off type mentioned in Registration
 UPDATE Vehicle V SET type = (SELECT R.vehicle_type FROM Registration R WHERE V.vehicle_number = R.vehicle_number);
 
 -- Outer JOIN
