@@ -79,12 +79,14 @@ CREATE TABLE audit_users (
 
 CREATE OR REPLACE FUNCTION auditlogusers() RETURNS TRIGGER AS $table$
   BEGIN
-    INSERT INTO audit_users(user_id, entry_date) VALUES (new.user_id, current_timestamp);
+    INSERT INTO audit_users
+    VALUES (new.user_id, current_timestamp);
     RETURN NEW;
   END;
 $table$ LANGUAGE plpgsql;
 
-CREATE TRIGGER audit_user_trigger AFTER INSERT OR UPDATE OR DELETE ON Users
+CREATE TRIGGER audit_user_trigger
+AFTER INSERT OR UPDATE OR DELETE ON Users
 FOR EACH ROW EXECUTE PROCEDURE auditlogusers();
 
 CREATE TABLE audit_insurance (
@@ -95,10 +97,15 @@ CREATE TABLE audit_insurance (
 
 CREATE OR REPLACE FUNCTION auditloginsurance() RETURNS TRIGGER AS $table$
   BEGIN
-    INSERT INTO audit_insurance(owner_id, agent_id, entry_date) VALUES (new.owner_id, (SELECT agent_id FROM customer WHERE customer_id = new.owner_id), current_timestamp);
+    INSERT INTO audit_insurance
+    VALUES (new.owner_id, (
+      SELECT agent_id
+      FROM customer
+      WHERE customer_id = new.owner_id), current_timestamp);
     RETURN NEW;
   END;
 $table$ LANGUAGE plpgsql;
 
-CREATE TRIGGER audit_insurance_trigger AFTER INSERT OR UPDATE OR DELETE ON Insurance
+CREATE TRIGGER audit_insurance_trigger
+AFTER INSERT OR UPDATE OR DELETE ON Insurance
 FOR EACH ROW EXECUTE PROCEDURE auditloginsurance();
