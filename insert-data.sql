@@ -29,13 +29,13 @@ INSERT INTO Customer VALUES (00103, 0002, 'customer3', '8899776633', 'customer3@
 INSERT INTO Customer VALUES (00104, 0002, 'customer4', '8899776622', 'customer4@gmail.com', '#10, UB City, Bangalore');
 INSERT INTO Customer VALUES (00105, 0001, 'customer5', '8899776611', 'customer5@gmail.com', '#12, UB City, Bangalore');
 
-INSERT INTO Vehicle VALUES (00201, 'KA 05 MC 1234', 'SUV', 'Blue Honda SUV', 00101);
-INSERT INTO Vehicle VALUES (00202, 'KA 05 MC 1235', 'Sedan', 'Grey Mercedees Sedan', 00102);
-INSERT INTO Vehicle VALUES (00203, 'KA 05 MC 2234', 'Hatch', 'White Kia hatchback', 00103);
-INSERT INTO Vehicle VALUES (00204, 'KA 05 MC 1134', 'Truck', 'Red freight truck', 00104);
-INSERT INTO Vehicle VALUES (00205, 'KA 05 MC 1255', 'Van', 'Green Maruti School Van', 00105);
-INSERT INTO Vehicle VALUES (00206, 'KA 05 MK 1295', 'Bike', 'Blue Bajaj Bike', 00105);
-INSERT INTO Vehicle VALUES (00207, 'KA 05 MK 1355', 'Scooter', 'Yellow Vespa Scooter', 00105);
+INSERT INTO Vehicle VALUES (00201, 'KA 05 MC 1234', 'LMV', 'Blue Honda SUV', 00101);
+INSERT INTO Vehicle VALUES (00202, 'KA 05 MC 1235', 'LMV', 'Grey Mercedees Sedan', 00102);
+INSERT INTO Vehicle VALUES (00203, 'KA 05 MC 2234', 'LMV', 'White Kia hatchback', 00103);
+INSERT INTO Vehicle VALUES (00204, 'KA 05 MC 1134', 'HMV', 'Red freight truck', 00104);
+INSERT INTO Vehicle VALUES (00205, 'KA 05 MC 1255', 'LMV', 'Green Maruti School Van', 00105);
+INSERT INTO Vehicle VALUES (00206, 'KA 05 MK 1295', 'MCWG', 'Blue Bajaj Bike', 00105);
+INSERT INTO Vehicle VALUES (00207, 'KA 05 MK 1355', 'MCWOG', 'Yellow Vespa Scooter', 00105);
 
 
 -- INSERT INTO Registration(vehicle_number, vehicle_type, date_of_registration) VALUES ('KA 05 MC 1234', 'LMV', '2002-01-08');

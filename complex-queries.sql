@@ -50,7 +50,7 @@ WHERE user_id in (
 -- Correlated Queries
 ---------------------
 
--- Find insurance details for all geared motor cycles
+-- Find insurance details for all non-geared motor cycles
 SELECT I.vehicle_number, I.insurance_amount, I.insurance_validity, I.insurance_type FROM insurance I WHERE I.registration_id = (SELECT R.registration_id FROM Registration R WHERE R.vehicle_type = 'MCWOG');
 
 -- Update vehicle make and model based off type mentioned in Registration
