@@ -92,6 +92,7 @@ FOR EACH ROW EXECUTE PROCEDURE auditlogusers();
 CREATE TABLE audit_insurance (
   owner_id integer NOT NULL,
   agent_id integer NOT NULL,
+  insurance_id integer NOT NULL,
   entry_date TIMESTAMP NOT NULL
 );
 
@@ -101,7 +102,7 @@ CREATE OR REPLACE FUNCTION auditloginsurance() RETURNS TRIGGER AS $table$
     VALUES (new.owner_id, (
       SELECT agent_id
       FROM customer
-      WHERE customer_id = new.owner_id), current_timestamp);
+      WHERE customer_id = new.owner_id), new.insurance_id, current_timestamp);
     RETURN NEW;
   END;
 $table$ LANGUAGE plpgsql;
