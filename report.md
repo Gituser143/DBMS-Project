@@ -279,3 +279,5 @@ SELECT * FROM Users FULL OUTER JOIN Insurance on Users.user_id = Insurance.owner
 
 Conclusion
 -----------
+
+This system can efficiently manage vehicle insurances. If equipped with a front-end, it can prove to be a powerful application which insurance companies can use to track and maintain records. The only limitations are there are no alerting methods to inform the end users of events like expiry of insurance. This however can be tackled quite easily and implemented as future scope.
