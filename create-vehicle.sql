@@ -68,3 +68,37 @@ CREATE TABLE Insurance (
   FOREIGN KEY(registration_id, vehicle_number) REFERENCES Registration(registration_id, vehicle_number) ON DELETE SET NULL ON UPDATE CASCADE,
   FOREIGN KEY(owner_id) REFERENCES Customer(customer_id) ON DELETE SET NULL ON UPDATE CASCADE
 );
+
+-- Audit Logs and triggers
+--------------------------
+
+CREATE TABLE audit_users (
+  user_id integer NOT NULL,
+  entry_date TIMESTAMP NOT NULL
+);
+
+CREATE OR REPLACE FUNCTION auditlogusers() RETURNS TRIGGER AS $table$
+  BEGIN
+    INSERT INTO audit_users(user_id, entry_date) VALUES (new.user_id, current_timestamp);
+    RETURN NEW;
+  END;
+$table$ LANGUAGE plpgsql;
+
+CREATE TRIGGER audit_user_trigger AFTER INSERT OR UPDATE OR DELETE ON Users
+FOR EACH ROW EXECUTE PROCEDURE auditlogusers();
+
+CREATE TABLE audit_insurance (
+  owner_id integer NOT NULL,
+  agent_id integer NOT NULL,
+  entry_date TIMESTAMP NOT NULL
+);
+
+CREATE OR REPLACE FUNCTION auditloginsurance() RETURNS TRIGGER AS $table$
+  BEGIN
+    INSERT INTO audit_insurance(owner_id, agent_id, entry_date) VALUES (new.owner_id, (SELECT agent_id FROM customer WHERE customer_id = new.owner_id), current_timestamp);
+    RETURN NEW;
+  END;
+$table$ LANGUAGE plpgsql;
+
+CREATE TRIGGER audit_insurance_trigger AFTER INSERT OR UPDATE OR DELETE ON Insurance
+FOR EACH ROW EXECUTE PROCEDURE auditloginsurance();
