@@ -30,7 +30,7 @@ WHERE C.customer_id in (
   WHERE insurance_validity > '2023-02-08'
 );
 
--- Find agents with customers having cars registered before 2020
+-- Find agents with customers having cars registered before 2022
 SELECT U.name, U.user_id
 FROM Users U
 WHERE user_id in (

@@ -9,7 +9,7 @@ CREATE TABLE Roles (
   role_name varchar(100),
   role_description varchar(100),
   office_building varchar(100),
-  salary integer,
+  salary integer CHECK (salary > 0),
   PRIMARY KEY (role_name)
 );
 
@@ -63,7 +63,7 @@ CREATE TABLE Insurance (
   owner_id integer,
   insurance_type varchar(20) NOT NULL,
   insurance_validity date NOT NULL,
-  insurance_amount integer NOT NULL,
+  insurance_amount integer NOT NULL CHECK (insurance_amount > 0),
   PRIMARY KEY (insurance_id),
   FOREIGN KEY(registration_id, vehicle_number) REFERENCES Registration(registration_id, vehicle_number) ON DELETE SET NULL ON UPDATE CASCADE,
   FOREIGN KEY(owner_id) REFERENCES Customer(customer_id) ON DELETE SET NULL ON UPDATE CASCADE
