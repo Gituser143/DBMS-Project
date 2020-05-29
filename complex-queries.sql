@@ -5,7 +5,7 @@
 -- FROM Employee NATURAL JOIN Roles;
 
 -- Find the count of customers each agent manages
-SELECT U.name, C.agent_id, COUNT(C.agent_id)
+SELECT U.name, C.agent_id, COUNT(C.agent_id) AS Number_of_Customers
 FROM customer C, Employee U
 WHERE U.user_id = C.agent_id
 GROUP BY (U.name, C.agent_id);
