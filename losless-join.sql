@@ -1,1 +1,1 @@
-SELECT * FROM Users NATURAL JOIN Roles NATURAL JOIN Login_Credentials;
+SELECT * FROM Employee NATURAL JOIN Roles NATURAL JOIN Login_Credentials;

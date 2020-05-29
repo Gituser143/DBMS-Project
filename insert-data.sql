@@ -13,13 +13,13 @@ INSERT INTO Roles VALUES ('Assistant Manager', 'Helps Managers', 'B02', 60000);
 INSERT INTO Roles VALUES ('System Administrator', 'Handles Servers', 'B04', 500000);
 INSERT INTO Roles VALUES ('CEO', 'Runs the company', 'B03', 2500000);
 
-INSERT INTO Users VALUES (0001, 'user1', 'user1@gmail.com', '9988776655', '#1, Bank street, Bangalore', 'agent1', 'Agent');
-INSERT INTO Users VALUES (0002, 'user2', 'user2@gmail.com', '9922776655', '#2, Church street, Bangalore', 'agent2', 'Manager');
-INSERT INTO Users VALUES (0003, 'user3', 'user3@gmail.com', '9933776655', '#3, Food street, Bangalore', 'agent3', 'Assistant Manager');
-INSERT INTO Users VALUES (0004, 'user4', 'user4@gmail.com', '9944776655', '#4, Bank Lane, Bangalore', 'agent4', 'System Administrator');
-INSERT INTO Users VALUES (0005, 'user5', 'user5@gmail.com', '9966776655', '#5, Bank street, Bangalore', 'agent5', 'CEO');
-INSERT INTO Users VALUES (0006, 'user6', 'user6@gmail.com', '9988776645', '#6, Bank street, Bangalore', 'agent6', 'Agent');
-INSERT INTO Users VALUES (0007, 'user7', 'user7@gmail.com', '9988776654', '#7, Bank street, Bangalore', 'agent7', 'Agent');
+INSERT INTO Employee VALUES (0001, 'user1', 'user1@gmail.com', '9988776655', '#1, Bank street, Bangalore', 'agent1', 'Agent');
+INSERT INTO Employee VALUES (0002, 'user2', 'user2@gmail.com', '9922776655', '#2, Church street, Bangalore', 'agent2', 'Manager');
+INSERT INTO Employee VALUES (0003, 'user3', 'user3@gmail.com', '9933776655', '#3, Food street, Bangalore', 'agent3', 'Assistant Manager');
+INSERT INTO Employee VALUES (0004, 'user4', 'user4@gmail.com', '9944776655', '#4, Bank Lane, Bangalore', 'agent4', 'System Administrator');
+INSERT INTO Employee VALUES (0005, 'user5', 'user5@gmail.com', '9966776655', '#5, Bank street, Bangalore', 'agent5', 'CEO');
+INSERT INTO Employee VALUES (0006, 'user6', 'user6@gmail.com', '9988776645', '#6, Bank street, Bangalore', 'agent6', 'Agent');
+INSERT INTO Employee VALUES (0007, 'user7', 'user7@gmail.com', '9988776654', '#7, Bank street, Bangalore', 'agent7', 'Agent');
 
 
 

@@ -13,7 +13,7 @@ CREATE TABLE Roles (
   PRIMARY KEY (role_name)
 );
 
-CREATE TABLE Users (
+CREATE TABLE Employee (
   user_id integer,
   username varchar(100),
   email_id varchar(100) NOT NULL UNIQUE,
@@ -34,7 +34,7 @@ CREATE TABLE Customer (
   email varchar(100) NOT NULL UNIQUE,
   address varchar(200) NOT NULL,
   PRIMARY KEY (customer_id),
-  FOREIGN KEY(agent_id) REFERENCES Users(user_id) ON DELETE SET NULL ON UPDATE CASCADE
+  FOREIGN KEY(agent_id) REFERENCES Employee(user_id) ON DELETE SET NULL ON UPDATE CASCADE
 );
 
 CREATE TABLE Vehicle (
@@ -86,7 +86,7 @@ CREATE OR REPLACE FUNCTION auditlogusers() RETURNS TRIGGER AS $table$
 $table$ LANGUAGE plpgsql;
 
 CREATE TRIGGER audit_user_trigger
-AFTER INSERT OR UPDATE OR DELETE ON Users
+AFTER INSERT OR UPDATE OR DELETE ON Employee
 FOR EACH ROW EXECUTE PROCEDURE auditlogusers();
 
 CREATE TABLE audit_insurance (

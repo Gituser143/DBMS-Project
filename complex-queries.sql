@@ -2,20 +2,20 @@
 --------------------
 
 -- SELECT AVG(salary)
--- FROM Users NATURAL JOIN Roles;
+-- FROM Employee NATURAL JOIN Roles;
 
 -- Find the count of customers each agent manages
 SELECT U.name, C.agent_id, COUNT(C.agent_id)
-FROM customer C, users U
+FROM customer C, Employee U
 WHERE U.user_id = C.agent_id
 GROUP BY (U.name, C.agent_id);
 
 -- Find agents with salary higher than average salary
 SELECT name, salary
-FROM Users NATURAL JOIN Roles
+FROM Employee NATURAL JOIN Roles
 WHERE salary > (
   SELECT AVG(salary)
-  FROM Users NATURAL JOIN Roles
+  FROM Employee NATURAL JOIN Roles
 );
 
 -- Nested Queries
@@ -32,7 +32,7 @@ WHERE C.customer_id in (
 
 -- Find agents with customers having cars registered before 2022
 SELECT U.name, U.user_id
-FROM Users U
+FROM Employee U
 WHERE user_id in (
   SELECT C.agent_id
   FROM Customer C
@@ -69,6 +69,6 @@ SET make_model = CONCAT((
 
 -- Outer JOIN
 -------------
-SELECT * FROM Users FULL OUTER JOIN Roles on Users.role_name = Roles.role_name;
+SELECT * FROM Employee FULL OUTER JOIN Roles on Employee.role_name = Roles.role_name;
 
-SELECT * FROM Users FULL OUTER JOIN Insurance on Users.user_id = Insurance.owner_id;
+SELECT * FROM Employee FULL OUTER JOIN Insurance on Employee.user_id = Insurance.owner_id;
